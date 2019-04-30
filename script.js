@@ -1,18 +1,14 @@
-//create textbox
+function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
 
-var item = document.getElementById('item');
+    li.appendChild(t);
 
-item.addEventListener("click", function(e) {
-    item.classList.toggle("complete")
-});
-
-//save new entries
-
-var save = document.getElementById('save-btn');
-var entry = document.getElementById('entry').value;
-
-
-
-save.addEventListener("click", function(e) {
-    console.log(entry);
-});
+    if (inputValue === '') {
+        alert("You must write something!");
+      } else {
+        document.getElementById("myUL").appendChild(li);
+      }
+      document.getElementById("myInput").value = "";
+}
