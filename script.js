@@ -1,35 +1,49 @@
-function newElement() {
+function newEntry() {
 
-    //Store textbox input into variable
+    // Store the text-box input into a variable.
 
-    var inputValue = document.getElementById("myInput").value;
+    var input = document.getElementById("input").value;
     
-    //Alert for empty value or append value to list
+    // We want to decide what to do next based on the input value being empty or not.
+    // The above are mutually exclusive cases, hence we can use an 'if-else' statement.
 
-    if (inputValue === '') {
+    if (input === '') {
+
         alert("You must write something!");
+
     } else {
-        var item = document.createElement("li");
-        item.innerText = inputValue;
 
-        document.getElementById("myUL").appendChild(item);
-      }
-      document.getElementById("myInput").value = "";
-
-      //Needs 'x' icon to be appended to every <li> as well
-}
-
-// Draw a line through list item when clicked
-// Problem: currently only works for <li> that already exist in the html, not for ones added via the textbox.
-// Possible solution: create a loop that scans the DOM and creates an array object.
-// That is then changed (its CSS) similar to how innerText changes HTML.
-
-var item = document.querySelector("li");
-
-    item.addEventListener('click', function(e) {
+        // Create a new (empty) list item and store it into a variable.
         
-        item.classList.toggle('check')
-    })
+        var item = document.createElement("li");
+        
+        // The above is an object. As such, it has properties.
+        // Different kinds of objects can have default properties.
+        // HTML objects have the 'innerText' property.
+        // Here we will change the value of this property (previously empty) to equal the user input. 
 
+        item.innerText = input;
 
-// Delete entry when 'x' icon is clicked.
+        // We select the whole UL element and create a child LI element inside it.
+
+        document.getElementById("list").appendChild(item);
+
+        // Overwrite the text-box value to empty.
+
+        document.getElementById("input").value = "";
+
+        // Draw a line through list item when clicked.
+        
+        item.addEventListener('click', function(e) {
+        
+            item.classList.toggle('check')
+        
+        })
+
+        // Append an 'x' icon to the new <li>.
+        
+        // Delete the entry when the 'x' is clicked.
+
+    }
+
+}
