@@ -1,3 +1,10 @@
+
+// Initialize the text-box as empty.
+
+document.getElementById("input").value = "";
+
+// Create a function that runs for every new entry to the list.
+
 function newEntry() {
 
     // Store the text-box input into a variable.
@@ -46,7 +53,9 @@ function newEntry() {
         
         x.src = "images/x-icon.png";
 
-        x.width = 10;
+        x.width = 15;
+
+        x.style.margin = "0 0 15px 10px";
 
         item.append(x);
         

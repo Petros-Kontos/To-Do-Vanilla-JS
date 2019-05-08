@@ -1,3 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    align-self: center;
+}
+
+input, button, ul {
+    font-size: 40px;
+}
+
 .check {
     text-decoration: line-through;
 }
