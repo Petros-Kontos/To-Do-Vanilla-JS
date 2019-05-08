@@ -24,7 +24,7 @@ function newEntry() {
 
         item.innerText = input;
 
-        // We select the whole UL element and create a child LI element inside it.
+        // We select the whole UL element and create and append the <li> element inside it.
 
         document.getElementById("list").appendChild(item);
 
@@ -40,9 +40,23 @@ function newEntry() {
         
         })
 
-        // Append an 'x' icon to the new <li>.
+        // Append an 'x' icon next to the new <li>.
+
+        var x = document.createElement("img");
+        
+        x.src = "images/x-icon.png";
+
+        x.width = 10;
+
+        item.append(x);
         
         // Delete the entry when the 'x' is clicked.
+
+        x.addEventListener('click', function(e) {
+        
+            item.classList.toggle('close')
+        
+        })
 
     }
 

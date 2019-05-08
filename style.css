@@ -1,3 +1,7 @@
 .check {
     text-decoration: line-through;
 }
+
+.close {
+    display: none;
+}
