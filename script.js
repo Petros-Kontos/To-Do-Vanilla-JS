@@ -1,5 +1,5 @@
 
-// Initialize the text-box as empty.
+// Initialize text-box as empty.
 
 document.getElementById("input").value = "";
 
